@@ -3,12 +3,9 @@ def parentheses_check_using_stack(input_str):
 
     for ch in input_str:
         if ch == '(':
-            print("enters 1")
             s.append(ch)
         if ch == ')':
-            print("enters 2")
             if not s:
-                print("enters 3")
                 return False
             s.pop()
 
