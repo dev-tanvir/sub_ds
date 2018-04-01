@@ -17,6 +17,7 @@ class Node:
 
 
 def create_tree():
+    """ A binary tree """
     two = Node(2)
     seven = Node(7)
     nine = Node(9)
