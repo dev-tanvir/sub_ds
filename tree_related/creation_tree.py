@@ -5,12 +5,17 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
+        self.parent = None
 
     def add_left(self, node):
         self.left = node
+        if node is not None:
+            node.parent = self
 
     def add_right(self, node):
         self.right = node
+        if node is not None:
+            node.parent = self
 
     def __repr__(self):
         return repr(self.data)
@@ -43,9 +48,16 @@ def create_tree():
     eight.add_left(three)
     eight.add_right(four)
 
+    print('====Parent======')
+    print('Parent of root node 2 ',two.parent)
+    print('Parent(2) of child node 7 ',seven.parent)
+    print('Parent(8) of child node 3 ',three.parent)
+
     return two
 
 
 if __name__ == "__main__":
+    print("Running============")
     root = create_tree()
+    print("checking root after tree creation")
     print(root)
